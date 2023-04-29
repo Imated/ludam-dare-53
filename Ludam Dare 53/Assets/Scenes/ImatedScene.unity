@@ -2084,6 +2084,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7c37f464a0556db4cb7d7943d8545b1b, type: 2}
   - {fileID: 11400000, guid: 8fcb20713b2a9c04b887f183e3b9dad2, type: 2}
   - {fileID: 11400000, guid: ecd4fd3102c500b4d89483d8410d0c0b, type: 2}
+  - {fileID: 11400000, guid: cd832bc154298ff4ca90ab12e0900fc6, type: 2}
   availableItemParent: {fileID: 1907348710}
   ownedItemParent: {fileID: 46075562}
   roomItemsParent: {fileID: 1301412759}

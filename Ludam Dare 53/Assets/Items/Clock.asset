@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d89639ba35f05545ab328c9ad9df224, type: 3}
-  m_Name: Microwave
+  m_Name: Clock
   m_EditorClassIdentifier: 
-  itemName: Microwave
-  icon: {fileID: 21300000, guid: 85e3977b1b12b324bb28461f7a21137c, type: 3}
-  roomItem: {fileID: 21300000, guid: 85e3977b1b12b324bb28461f7a21137c, type: 3}
-  cost: 250
+  itemName: Clock
+  icon: {fileID: 21300000, guid: edf7cc055e838a84d84e0436719fb3b4, type: 3}
+  roomItem: {fileID: 21300000, guid: edf7cc055e838a84d84e0436719fb3b4, type: 3}
+  cost: 25

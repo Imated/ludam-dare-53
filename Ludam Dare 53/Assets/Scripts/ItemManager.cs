@@ -7,6 +7,8 @@ public class ItemManager : MonoBehaviour
     public static ItemManager instance;
     [SerializeField] private List<Item> availableItems;
     [SerializeField] private GameObject availableItemParent;
+    [SerializeField] private GameObject roomItemsParent;
+    [SerializeField] private GameObject roomItemPrefab;
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private int itemsPerDay = 10;
 
@@ -44,6 +46,8 @@ public class ItemManager : MonoBehaviour
 
     public void OnItemBuy(Item item, GameObject uiItem)
     {
-
+        var roomItem = Instantiate(roomItemPrefab, roomItemsParent.transform);
+        roomItem.name = item.name;
+        roomItem.GetComponent<Image>().sprite = item.roomItem;
     }
 }

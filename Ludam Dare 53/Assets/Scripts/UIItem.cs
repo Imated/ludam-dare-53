@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class UIItem : MonoBehaviour
 {
+    [HideInInspector] public Item referenceItem;
+    
     [SerializeField] private Image iconImage;
     [SerializeField] private TMP_Text itemNameText;
     [SerializeField] private TMP_Text costText;
@@ -15,5 +17,6 @@ public class UIItem : MonoBehaviour
         iconImage.sprite = item.icon;
         itemNameText.text = item.itemName;
         costText.text = $"$ {cost}{ext}";
+        referenceItem = item;
     }
 }

@@ -37,7 +37,7 @@ public class ItemManager : MonoBehaviour
         foreach (var item in _items)
         {
             var uiItem = Instantiate(itemPrefab, availableItemParent.transform);
-            var percent = Random.Range(25, 31);
+            var percent = Random.Range(10, 16);
             var randomCost = item.cost * Random.Range(1f - percent / 100f, 1f + percent / 100f);
             uiItem.GetComponent<UIItem>().Initialize(item, (int) randomCost);
             uiItem.GetComponentInChildren<Button>().onClick.AddListener(() =>

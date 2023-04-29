@@ -54,6 +54,8 @@ public class ItemManager : MonoBehaviour
             var roomItem = Instantiate(roomItemPrefab, roomItemsParent.transform);
             roomItem.name = item.name;
             roomItem.GetComponent<Image>().sprite = item.roomItem;
+            roomItem.transform.localPosition = new Vector3(roomItem.transform.localPosition.x,
+                roomItem.transform.localPosition.y, item.zOrder);
         }
         _ownedItems.Add(item);
         var uiItem = Instantiate(itemPrefab, ownedItemParent.transform);

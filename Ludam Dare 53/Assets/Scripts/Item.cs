@@ -7,4 +7,5 @@ public class Item : ScriptableObject
     public Sprite icon;
     public Sprite roomItem;
     public float cost;
+    public int zOrder = 0;
 }

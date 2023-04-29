@@ -30,7 +30,10 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _image.sprite = normalSprite;
-        onClicked?.Invoke();
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            _image.sprite = normalSprite;
+            onClicked?.Invoke();
+        }
     }
 }

@@ -13,6 +13,7 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private int itemsPerDay = 10;
 
     private List<Item> _items = new List<Item>();
+    private List<Item> _ownedItems = new List<Item>();
 
     private void Awake()
     {
@@ -46,8 +47,12 @@ public class ItemManager : MonoBehaviour
 
     public void OnItemBuy(Item item, GameObject uiItem)
     {
-        var roomItem = Instantiate(roomItemPrefab, roomItemsParent.transform);
-        roomItem.name = item.name;
-        roomItem.GetComponent<Image>().sprite = item.roomItem;
+        if (!_ownedItems.Contains(item))
+        {
+            var roomItem = Instantiate(roomItemPrefab, roomItemsParent.transform);
+            roomItem.name = item.name;
+            roomItem.GetComponent<Image>().sprite = item.roomItem;
+        }
+        _ownedItems.Add(item);
     }
 }

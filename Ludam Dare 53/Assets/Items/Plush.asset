@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: Among Us Plush Toy
   icon: {fileID: 21300000, guid: c0dc9f64935f8054a86fdc695f2cfacb, type: 3}
   roomItem: {fileID: 21300000, guid: 9bf5df81adb39144c87531d171174266, type: 3}
-  cost: 1000
+  cost: 50
+  zOrder: 0

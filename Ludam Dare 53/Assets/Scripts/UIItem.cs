@@ -19,4 +19,13 @@ public class UIItem : MonoBehaviour
         costText.text = $"$ {cost}{ext}";
         referenceItem = item;
     }
+
+    public void InitializeOwned(Item item)
+    {
+        iconImage.sprite = item.icon;
+        itemNameText.text = item.itemName;
+        GetComponentInChildren<Button>().GetComponentInChildren<TMP_Text>().text = "Sell";
+        costText.gameObject.SetActive(false);
+        referenceItem = item;
+    }
 }

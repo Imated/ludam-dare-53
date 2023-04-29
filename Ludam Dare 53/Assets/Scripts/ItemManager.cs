@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class ItemManager : MonoBehaviour
     public static ItemManager instance;
     [SerializeField] private List<Item> availableItems;
     [SerializeField] private GameObject availableItemParent;
+    [SerializeField] private GameObject ownedItemParent;
     [SerializeField] private GameObject roomItemsParent;
     [SerializeField] private GameObject roomItemPrefab;
     [SerializeField] private GameObject itemPrefab;
@@ -45,7 +47,7 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public void OnItemBuy(Item item, GameObject uiItem)
+    public void OnItemBuy(Item item, GameObject uiItemObject)
     {
         if (!_ownedItems.Contains(item))
         {
@@ -54,5 +56,8 @@ public class ItemManager : MonoBehaviour
             roomItem.GetComponent<Image>().sprite = item.roomItem;
         }
         _ownedItems.Add(item);
+        var uiItem = Instantiate(itemPrefab, ownedItemParent.transform);
+        ownedItemParent.transform.position = Vector3.zero;
+        uiItem.GetComponent<UIItem>().InitializeOwned(item);
     }
 }

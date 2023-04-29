@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
@@ -34,6 +35,15 @@ public class ItemManager : MonoBehaviour
             var percent = Random.Range(25, 31);
             var randomCost = item.cost * Random.Range(1f - percent / 100f, 1f + percent / 100f);
             uiItem.GetComponent<UIItem>().Initialize(item, (int) randomCost);
+            uiItem.GetComponentInChildren<Button>().onClick.AddListener(() =>
+            {
+                OnItemBuy(item, uiItem);
+            });
         }
+    }
+
+    public void OnItemBuy(Item item, GameObject uiItem)
+    {
+
     }
 }

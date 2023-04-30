@@ -7,12 +7,11 @@ public class ItemManager : MonoBehaviour
 {
     public static ItemManager instance;
     [SerializeField] private List<Item> availableItems;
+    [SerializeField] private List<GameObject> roomItems;
     [SerializeField] private GameObject availableItemParent;
     [SerializeField] private GameObject sellUI;
     [SerializeField] private TMP_InputField sellUIPriceField;
     [SerializeField] private GameObject ownedItemParent;
-    [SerializeField] private GameObject roomItemsParent;
-    [SerializeField] private GameObject roomItemPrefab;    
     [SerializeField] private GameObject shippingItemsParent;
     [SerializeField] private GameObject shippingItemPrefab;
     [SerializeField] private GameObject itemPrefab;
@@ -62,11 +61,11 @@ public class ItemManager : MonoBehaviour
             return;
         if (!_ownedItems.Contains(item))
         {
-            var roomItem = Instantiate(roomItemPrefab, roomItemsParent.transform);
-            roomItem.name = item.name;
-            roomItem.GetComponent<Image>().sprite = item.roomItem;
-            roomItem.transform.localPosition = new Vector3(roomItem.transform.localPosition.x,
-                roomItem.transform.localPosition.y, item.zOrder);
+            for (var i = 0; i < availableItems.Count; i++)
+            {
+                if(availableItems[i] == item)
+                    roomItems[i].SetActive(true);
+            }
         }
         _ownedItems.Add(item);
         var uiItem = Instantiate(itemPrefab, ownedItemParent.transform);
@@ -82,17 +81,23 @@ public class ItemManager : MonoBehaviour
 
     public void SellCurrentItem()
     {
-        _ownedItems.Remove(_currentlySelectedItem);
-        Destroy(_currentlySelectedUIItem);
-        if(!_ownedItems.Contains(_currentlySelectedItem))
-            Destroy(roomItemsParent.transform.Find(_currentlySelectedItem.name).gameObject);
         var item = _currentlySelectedItem;
-        _currentlySelectedItem = null;
-        _currentlySelectedUIItem = null;
+        _ownedItems.Remove(item);
+        Destroy(_currentlySelectedUIItem);
+        if(!_ownedItems.Contains(item))
+        {
+            for (var i = 0; i < availableItems.Count; i++)
+            {
+                if(availableItems[i] == item)
+                    roomItems[i].SetActive(false);
+            }
+        }
         sellUI.SetActive(false);
         _shippingItems.Add(item);
         var uiItem = Instantiate(shippingItemPrefab, shippingItemsParent.transform);
         int.TryParse(sellUIPriceField.text, out var sellingPrice);
         uiItem.GetComponent<UIItem>().Initialize(item, sellingPrice);
+        _currentlySelectedItem = null;
+        _currentlySelectedUIItem = null;
     }
 }

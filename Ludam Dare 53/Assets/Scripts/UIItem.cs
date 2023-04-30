@@ -22,12 +22,12 @@ public class UIItem : MonoBehaviour
         referenceItem = item;
     }
 
-    public void InitializeOwned(Item item)
+    public void InitializeOwned(Item item, float cost)
     {
         iconImage.sprite = item.icon;
         itemNameText.text = item.itemName;
         GetComponentInChildren<Button>().GetComponentInChildren<TMP_Text>().text = "Sell";
-        costText.gameObject.SetActive(false);
+        costText.text = $"$ {cost:F2}";
         referenceItem = item;
     }
 

@@ -73,7 +73,7 @@ public class ItemManager : MonoBehaviour
         _ownedItems.Add(item);
         var uiItem = Instantiate(itemPrefab, ownedItemParent.transform);
         ownedItemParent.transform.position = Vector3.zero;
-        uiItem.GetComponent<UIItem>().InitializeOwned(item);
+        uiItem.GetComponent<UIItem>().InitializeOwned(item, cost);
         uiItem.GetComponentInChildren<Button>().onClick.AddListener(() =>
         {
             _currentlySelectedItem = item;

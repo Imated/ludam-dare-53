@@ -46,16 +46,20 @@ public class ItemManager : MonoBehaviour
             var uiItem = Instantiate(itemPrefab, availableItemParent.transform);
             var percent = Random.Range(10, 16);
             var randomCost = item.cost * Random.Range(1f - percent / 100f, 1f + percent / 100f);
-            uiItem.GetComponent<UIItem>().Initialize(item, (int) randomCost);
+            var rand = Random.Range(0, 2);
+            var ext = rand == 0f ? 0.00f : 0.50f;
+            uiItem.GetComponent<UIItem>().Initialize(item, (int) randomCost + ext);
             uiItem.GetComponentInChildren<Button>().onClick.AddListener(() =>
             {
-                OnItemBuy(item, uiItem);
+                OnItemBuy(item, uiItem, (int) randomCost + ext);
             });
         }
     }
-
-    public void OnItemBuy(Item item, GameObject uiItemObject)
+    
+    public void OnItemBuy(Item item, GameObject uiItemObject, float cost)
     {
+        if(!GameManager.instance.RemoveMoney(cost))
+            return;
         if (!_ownedItems.Contains(item))
         {
             var roomItem = Instantiate(roomItemPrefab, roomItemsParent.transform);

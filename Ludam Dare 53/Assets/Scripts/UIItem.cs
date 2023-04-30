@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +13,9 @@ public class UIItem : MonoBehaviour
 
     public void Initialize(Item item, float cost)
     {
-        var rand = Random.Range(0, 2);
-        var ext = rand == 0 ? ".00" : ".50";
         iconImage.sprite = item.icon;
         itemNameText.text = item.itemName;
-        costText.text = $"$ {cost}{ext}";
+        costText.text = $"$ {cost:F2}";
         referenceItem = item;
     }
 

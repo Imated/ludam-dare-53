@@ -15,7 +15,7 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private GameObject shippingItemsParent;
     [SerializeField] private GameObject shippingItemPrefab;
     [SerializeField] private GameObject itemPrefab;
-    [SerializeField] private int itemsPerDay = 10;
+    [SerializeField] private List<int> itemsPerDay = new List<int>();
 
     private List<Item> _items = new List<Item>();
     private List<Item> _ownedItems = new List<Item>();
@@ -24,7 +24,7 @@ public class ItemManager : MonoBehaviour
     private Item _currentlySelectedItem;
     private GameObject _currentlySelectedUIItem;
 
-    private void Awake()
+    private void Start()
     {
         instance = this;
         foreach (var item in roomItems)
@@ -37,7 +37,10 @@ public class ItemManager : MonoBehaviour
         _items.Clear();
         foreach (var c in availableItemParent.transform)
             Destroy((c as Transform)?.gameObject);
-        for (var i = 0; i < itemsPerDay; i++)
+        var day = GameManager.instance.Day - 1;
+        if (day >= itemsPerDay.Count - 1)
+            day = itemsPerDay.Count - 1;
+        for (var i = 0; i < itemsPerDay[day]; i++)
         {
             var rand = Random.Range(0, availableItems.Count);
             _items.Add(availableItems[rand]);

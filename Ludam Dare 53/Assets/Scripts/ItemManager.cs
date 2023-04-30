@@ -87,14 +87,6 @@ public class ItemManager : MonoBehaviour
         var item = _currentlySelectedItem;
         _ownedItems.Remove(item);
         Destroy(_currentlySelectedUIItem);
-        if(!_ownedItems.Contains(item))
-        {
-            for (var i = 0; i < availableItems.Count; i++)
-            {
-                if(availableItems[i] == item)
-                    roomItems[i].SetActive(false);
-            }
-        }
         sellUI.SetActive(false);
         _shippingItems.Add(item);
         var uiItem = Instantiate(shippingItemPrefab, shippingItemsParent.transform);
@@ -115,6 +107,14 @@ public class ItemManager : MonoBehaviour
             {
                 transactionsToRemove.Add(transaction);
                 _shippingItems.Remove(uiItem.referenceItem);
+                if(!_ownedItems.Contains(uiItem.referenceItem))
+                {
+                    for (var i = 0; i < availableItems.Count; i++)
+                    {
+                        if(availableItems[i] == uiItem.referenceItem)
+                            roomItems[i].SetActive(false);
+                    }
+                }
             }
         }
 

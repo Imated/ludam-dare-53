@@ -20,6 +20,7 @@ public class ItemManager : MonoBehaviour
     private List<Item> _items = new List<Item>();
     private List<Item> _ownedItems = new List<Item>();
     private List<Item> _shippingItems = new List<Item>();
+    private List<GameObject> _uiTransactions = new List<GameObject>();
     private Item _currentlySelectedItem;
     private GameObject _currentlySelectedUIItem;
 
@@ -98,8 +99,26 @@ public class ItemManager : MonoBehaviour
         _shippingItems.Add(item);
         var uiItem = Instantiate(shippingItemPrefab, shippingItemsParent.transform);
         int.TryParse(sellUIPriceField.text, out var sellingPrice);
-        uiItem.GetComponent<UIItem>().Initialize(item, sellingPrice);
+        uiItem.GetComponent<UIItem>().InitializeTransaction(item, sellingPrice);
+        _uiTransactions.Add(uiItem);
         _currentlySelectedItem = null;
         _currentlySelectedUIItem = null;
+    }
+
+    public void OnBedClicked()
+    {
+        var transactionsToRemove = new List<GameObject>();
+        foreach (var transaction in _uiTransactions)
+        {
+            var uiItem = transaction.GetComponent<UIItem>();
+            if (uiItem.TrySell())
+            {
+                transactionsToRemove.Add(transaction);
+                _shippingItems.Remove(uiItem.referenceItem);
+            }
+        }
+
+        foreach (var transaction in transactionsToRemove)
+            _uiTransactions.Remove(transaction);
     }
 }

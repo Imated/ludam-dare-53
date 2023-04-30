@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +10,10 @@ public class UIItem : MonoBehaviour
     [SerializeField] private TMP_Text itemNameText;
     [SerializeField] private TMP_Text costText;
 
+    private bool _isTransaction;
+    private float _chanceOfBeingSold;
+    private float _sellingPrice;
+    
     public void Initialize(Item item, float cost)
     {
         iconImage.sprite = item.icon;
@@ -26,5 +29,33 @@ public class UIItem : MonoBehaviour
         GetComponentInChildren<Button>().GetComponentInChildren<TMP_Text>().text = "Sell";
         costText.gameObject.SetActive(false);
         referenceItem = item;
+    }
+
+    public void InitializeTransaction(Item item, float price)
+    {
+        iconImage.sprite = item.icon;
+        itemNameText.text = item.itemName;
+        costText.text = $"$ {price:F2}";
+        referenceItem = item;
+        _sellingPrice = price;
+        _isTransaction = true;
+        var priceDiff = Mathf.Abs(price - item.cost);
+        var priceRatio = priceDiff / item.cost;
+        _chanceOfBeingSold = Mathf.Clamp01(1f - Mathf.Pow(priceRatio, 2f)) + 0.05f;
+        print(_chanceOfBeingSold * 100);
+    }
+
+    public bool TrySell()
+    {
+        if(!_isTransaction)
+            return false;
+        if (Random.value < _chanceOfBeingSold)
+        {
+            GameManager.instance.AddMoney(_sellingPrice);
+            Destroy(gameObject);
+            return true;
+        }
+
+        return false;
     }
 }

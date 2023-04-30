@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Carpet
   m_EditorClassIdentifier: 
   itemName: Carpet
-  icon: {fileID: 21300000, guid: 9bf5df81adb39144c87531d171174266, type: 3}
+  icon: {fileID: 21300000, guid: ea1dbd2e808bd82468936da608cf95ea, type: 3}
   roomItem: {fileID: 21300000, guid: 57fe253ea74679743b4bd14724fa003e, type: 3}
   cost: 25
+  zOrder: 0

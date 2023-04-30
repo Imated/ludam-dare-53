@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Microwave
   m_EditorClassIdentifier: 
   itemName: Microwave
-  icon: {fileID: 21300000, guid: 85e3977b1b12b324bb28461f7a21137c, type: 3}
+  icon: {fileID: 21300000, guid: ac3c5c4499ba58f4b8490b1206aac006, type: 3}
   roomItem: {fileID: 21300000, guid: 85e3977b1b12b324bb28461f7a21137c, type: 3}
   cost: 175
   zOrder: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Skateboard
   m_EditorClassIdentifier: 
   itemName: Skateboard
-  icon: {fileID: 21300000, guid: 4a70e724679b2c148b86fcce3f55fa29, type: 3}
+  icon: {fileID: 21300000, guid: e1b2c20b1b2006a4c98ce38521cec4e1, type: 3}
   roomItem: {fileID: 21300000, guid: 4a70e724679b2c148b86fcce3f55fa29, type: 3}
   cost: 175
+  zOrder: 0

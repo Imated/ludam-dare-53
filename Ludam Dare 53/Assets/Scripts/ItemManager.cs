@@ -12,12 +12,15 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private TMP_InputField sellUIPriceField;
     [SerializeField] private GameObject ownedItemParent;
     [SerializeField] private GameObject roomItemsParent;
-    [SerializeField] private GameObject roomItemPrefab;
+    [SerializeField] private GameObject roomItemPrefab;    
+    [SerializeField] private GameObject shippingItemsParent;
+    [SerializeField] private GameObject shippingItemPrefab;
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private int itemsPerDay = 10;
 
     private List<Item> _items = new List<Item>();
     private List<Item> _ownedItems = new List<Item>();
+    private List<Item> _shippingItems = new List<Item>();
     private Item _currentlySelectedItem;
     private GameObject _currentlySelectedUIItem;
 
@@ -77,8 +80,15 @@ public class ItemManager : MonoBehaviour
     {
         _ownedItems.Remove(_currentlySelectedItem);
         Destroy(_currentlySelectedUIItem);
+        if(!_ownedItems.Contains(_currentlySelectedItem))
+            Destroy(roomItemsParent.transform.Find(_currentlySelectedItem.name).gameObject);
+        var item = _currentlySelectedItem;
         _currentlySelectedItem = null;
         _currentlySelectedUIItem = null;
         sellUI.SetActive(false);
+        _shippingItems.Add(item);
+        var uiItem = Instantiate(shippingItemPrefab, shippingItemsParent.transform);
+        int.TryParse(sellUIPriceField.text, out var sellingPrice);
+        uiItem.GetComponent<UIItem>().Initialize(item, sellingPrice);
     }
 }

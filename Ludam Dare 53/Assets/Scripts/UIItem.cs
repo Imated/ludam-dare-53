@@ -39,10 +39,7 @@ public class UIItem : MonoBehaviour
         referenceItem = item;
         _sellingPrice = price;
         _isTransaction = true;
-        var priceDiff = Mathf.Abs(price - item.cost);
-        var priceRatio = priceDiff / item.cost;
-        _chanceOfBeingSold = Mathf.Clamp01(1f - Mathf.Pow(priceRatio, 2f)) + 0.05f;
-        print(_chanceOfBeingSold * 100);
+        _chanceOfBeingSold = Mathf.Pow(50, item.cost / price) / 100;
     }
 
     public bool TrySell()

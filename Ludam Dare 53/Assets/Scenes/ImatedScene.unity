@@ -349,8 +349,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: -20, y: -13}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -39.999992, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &194590517
 MonoBehaviour:
@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 316779892}
   - component: {fileID: 316779891}
   - component: {fileID: 316779890}
+  - component: {fileID: 316779893}
   m_Layer: 5
   m_Name: Sell Btn
   m_TagString: Untagged
@@ -707,7 +708,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 165f9f855142fb543a6e06ece01bedc3, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -715,7 +716,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.2
 --- !u!222 &316779892
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -724,6 +725,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316779888}
   m_CullTransparentMesh: 1
+--- !u!114 &316779893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316779888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf41881fed33f49ab9ae49b930c091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 21300000, guid: 165f9f855142fb543a6e06ece01bedc3, type: 3}
+  highlightedSprite: {fileID: 21300000, guid: e02b81e628f21d4488286a3cbb199f0c, type: 3}
+  onClicked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &330640786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,8 +2479,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2150773298
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.5}
+    rgba: 2348810240
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0.54901963}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2479,8 +2497,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.2
-  m_fontSizeBase: 63.2
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2767,7 +2785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 1a85d4cbeb3330643beb0157cc40c43b, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2776,7 +2794,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.25
 --- !u!222 &873942166
 CanvasRenderer:
   m_ObjectHideFlags: 0

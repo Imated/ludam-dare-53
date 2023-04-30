@@ -26,6 +26,8 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        foreach (var item in roomItems)
+            item.SetActive(false);
         SpawnItems();
     }
 

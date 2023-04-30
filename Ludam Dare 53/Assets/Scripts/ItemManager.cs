@@ -8,6 +8,8 @@ public class ItemManager : MonoBehaviour
     public static ItemManager instance;
     [SerializeField] private List<Item> availableItems;
     [SerializeField] private GameObject availableItemParent;
+    [SerializeField] private GameObject sellUI;
+    [SerializeField] private TMP_InputField sellUIPriceField;
     [SerializeField] private GameObject ownedItemParent;
     [SerializeField] private GameObject roomItemsParent;
     [SerializeField] private GameObject roomItemPrefab;
@@ -16,6 +18,8 @@ public class ItemManager : MonoBehaviour
 
     private List<Item> _items = new List<Item>();
     private List<Item> _ownedItems = new List<Item>();
+    private Item _currentlySelectedItem;
+    private GameObject _currentlySelectedUIItem;
 
     private void Awake()
     {
@@ -61,5 +65,20 @@ public class ItemManager : MonoBehaviour
         var uiItem = Instantiate(itemPrefab, ownedItemParent.transform);
         ownedItemParent.transform.position = Vector3.zero;
         uiItem.GetComponent<UIItem>().InitializeOwned(item);
+        uiItem.GetComponentInChildren<Button>().onClick.AddListener(() =>
+        {
+            _currentlySelectedItem = item;
+            _currentlySelectedUIItem = uiItem;
+            sellUI.SetActive(true);
+        });
+    }
+
+    public void SellCurrentItem()
+    {
+        _ownedItems.Remove(_currentlySelectedItem);
+        Destroy(_currentlySelectedUIItem);
+        _currentlySelectedItem = null;
+        _currentlySelectedUIItem = null;
+        sellUI.SetActive(false);
     }
 }

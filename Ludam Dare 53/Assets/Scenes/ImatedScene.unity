@@ -564,7 +564,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 316779891}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1401982471}
+        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
+        m_MethodName: SellCurrentItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &316779891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,7 +2749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 8.35}
+  m_AnchoredPosition: {x: 0, y: 8.349998}
   m_SizeDelta: {x: 0, y: 16.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1212605983
@@ -3013,11 +3025,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ecd4fd3102c500b4d89483d8410d0c0b, type: 2}
   - {fileID: 11400000, guid: cd832bc154298ff4ca90ab12e0900fc6, type: 2}
   availableItemParent: {fileID: 1907348710}
+  sellUI: {fileID: 768923425}
+  sellUIPriceField: {fileID: 873942164}
   ownedItemParent: {fileID: 46075562}
   roomItemsParent: {fileID: 1301412759}
   roomItemPrefab: {fileID: 8490641063577377522, guid: 487d2ab15ed76cd42b2a1383c1fb6c26, type: 3}
   itemPrefab: {fileID: 7174640632082583825, guid: 115e4a5cc2be1d04fab4219c11d7e351, type: 3}
-  itemsPerDay: 10
+  itemsPerDay: 3
 --- !u!1 &1462303130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,6 +3292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1907348711}
   - component: {fileID: 1907348712}
+  - component: {fileID: 1907348713}
   m_Layer: 5
   m_Name: Container
   m_TagString: Untagged
@@ -3331,6 +3346,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1907348713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907348710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 1
 --- !u!1 &2009617478
 GameObject:
   m_ObjectHideFlags: 0

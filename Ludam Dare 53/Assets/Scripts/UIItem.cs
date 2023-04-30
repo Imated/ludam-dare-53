@@ -39,14 +39,15 @@ public class UIItem : MonoBehaviour
         referenceItem = item;
         _sellingPrice = price;
         _isTransaction = true;
-        _chanceOfBeingSold = Mathf.Pow(50, item.cost / price) / 100;
+        _chanceOfBeingSold = Mathf.Pow(50, Mathf.Pow(item.cost / price, 2 / (item.cost / price))) / 100;
+        print(_chanceOfBeingSold * 100);
     }
 
     public bool TrySell()
     {
         if(!_isTransaction)
             return false;
-        if (Random.value < _chanceOfBeingSold)
+        if (Random.value < _chanceOfBeingSold / 100)
         {
             GameManager.instance.AddMoney(_sellingPrice);
             Destroy(gameObject);

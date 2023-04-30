@@ -47,7 +47,7 @@ public class UIItem : MonoBehaviour
     {
         if(!_isTransaction)
             return false;
-        if (Random.value < _chanceOfBeingSold / 100)
+        if (Random.value < _chanceOfBeingSold)
         {
             GameManager.instance.AddMoney(_sellingPrice);
             Destroy(gameObject);

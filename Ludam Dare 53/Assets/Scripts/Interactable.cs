@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left && hovering)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
             _image.sprite = highlightedSprite;
             onClicked?.Invoke();

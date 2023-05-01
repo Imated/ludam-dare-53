@@ -40,6 +40,7 @@ public class UIItem : MonoBehaviour
         _sellingPrice = price;
         _isTransaction = true;
         _chanceOfBeingSold = Mathf.Pow(50, Mathf.Pow(item.cost / price, 2 / (item.cost / price))) / 100;
+        print(price);
         print(_chanceOfBeingSold * 100);
     }
 

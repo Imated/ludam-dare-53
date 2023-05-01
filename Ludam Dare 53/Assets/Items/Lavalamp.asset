@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d89639ba35f05545ab328c9ad9df224, type: 3}
   m_Name: Lavalamp
   m_EditorClassIdentifier: 
-  itemName: Lavlamp
+  itemName: Lavalamp
   icon: {fileID: 21300000, guid: b67b02d3017772a4eaf4f53ae0614d9d, type: 3}
   cost: 32.5

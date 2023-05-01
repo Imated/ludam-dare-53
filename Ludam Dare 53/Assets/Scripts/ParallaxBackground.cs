@@ -4,15 +4,23 @@ namespace LunarJam
 {
     public class ParallaxBackground : MonoBehaviour
     {
-        [SerializeField] private float scrollSpeed = 0.5f;
-        [SerializeField] private float backgroundWidth = 25f;
-        [SerializeField] private float resetPos = 7f;
+        [SerializeField] private float parallaxSpeed = 1f;
+        [SerializeField] private float resetYPosition  = -20f;
+
+        private Vector3 _originalPosition;
+
+        private void Awake()
+        {
+            _originalPosition = transform.position;
+        }
 
         private void Update()
         {
-            transform.position += new Vector3(-scrollSpeed * Time.deltaTime, 0);
-            if (transform.position.x < -backgroundWidth)
-                transform.position = new Vector3(resetPos, transform.position.y);
+            var xDelta = Time.deltaTime * -parallaxSpeed;
+            var yDelta = Time.deltaTime * -parallaxSpeed;
+            transform.position += new Vector3(xDelta, yDelta, 0f);
+            if (transform.position.y <= resetYPosition)
+                transform.position = _originalPosition;
         }
     }
 }

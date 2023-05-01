@@ -93,7 +93,7 @@ public class ItemManager : MonoBehaviour
         sellUI.SetActive(false);
         _shippingItems.Add(item);
         var uiItem = Instantiate(shippingItemPrefab, shippingItemsParent.transform);
-        int.TryParse(sellUIPriceField.text, out var sellingPrice);
+        float.TryParse(sellUIPriceField.text, out var sellingPrice);
         uiItem.GetComponent<UIItem>().InitializeTransaction(item, sellingPrice);
         _uiTransactions.Add(uiItem);
         _currentlySelectedItem = null;
@@ -110,7 +110,7 @@ public class ItemManager : MonoBehaviour
             {
                 transactionsToRemove.Add(transaction);
                 _shippingItems.Remove(uiItem.referenceItem);
-                if(!_ownedItems.Contains(uiItem.referenceItem))
+                if(!_ownedItems.Contains(uiItem.referenceItem) && !_shippingItems.Contains(uiItem.referenceItem))
                 {
                     for (var i = 0; i < availableItems.Count; i++)
                     {

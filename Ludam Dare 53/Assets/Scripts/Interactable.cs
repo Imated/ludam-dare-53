@@ -44,7 +44,7 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            _image.sprite = highlightedSprite;
+            _image.sprite = normalSprite;
             onClicked?.Invoke();
         }
     }

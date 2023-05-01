@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public UnityEvent onClicked;
 
     private bool hovering = false;
+    private bool _canClick = true;
     private Image _image;
 
     private void Awake()
@@ -35,7 +36,7 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Left && _canClick)
         {
             _image.sprite = pressedSprite;
             AudioManager.instance.PlayClickSfx();
@@ -44,10 +45,17 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Left && hovering)
+        if (eventData.button == PointerEventData.InputButton.Left && hovering && _canClick)
         {
             _image.sprite = normalSprite;
             onClicked?.Invoke();
+            _canClick = false;
+            Invoke(nameof(CanClick), 1f);
         }
+    }
+
+    private void CanClick()
+    {
+        _canClick = true;
     }
 }

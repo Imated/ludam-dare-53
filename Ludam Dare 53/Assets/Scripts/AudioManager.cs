@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
 
     private float _defaultVolume;
+    private bool _isMute;
     
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class AudioManager : MonoBehaviour
         _defaultVolume = musicSource.volume;
         musicSource.Play();
         instance = this;
+        SceneManager.sceneLoaded += (scene, mode) => { AudioListener.volume = _isMute ? 0 : 1; };
     }
 
     public void PlayGame()
@@ -57,5 +60,19 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.clip = purchaseClip;
         sfxSource.Play();
+    }
+
+    public void ToggleMute()
+    {
+        if (_isMute)
+        {
+            AudioListener.volume = 1;
+            _isMute = false;
+        }
+        else
+        {
+            AudioListener.volume = 0;
+            _isMute = true;
+        }
     }
 }

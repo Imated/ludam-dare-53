@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip mainMenuClip;
     [SerializeField] private AudioClip gameplayClip;
     [SerializeField] private AudioClip hoverClip;
+    [SerializeField] private AudioClip purchaseClip;
+    [SerializeField] private AudioClip bedClip;
     [SerializeField] private AudioClip clickClip;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
@@ -42,6 +44,18 @@ public class AudioManager : MonoBehaviour
     public void PlayClickSfx()
     {
         sfxSource.clip = clickClip;
+        sfxSource.Play();
+    }
+    
+    public void PlayBedSfx()
+    {
+        sfxSource.clip = bedClip;
+        sfxSource.Play();
+    }
+    
+    public void PlayPurchaseSfx()
+    {
+        sfxSource.clip = purchaseClip;
         sfxSource.Play();
     }
 }

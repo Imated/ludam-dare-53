@@ -3263,6 +3263,8 @@ MonoBehaviour:
   mainMenuClip: {fileID: 8300000, guid: 13b12e668862cf949beb6c1df9657b70, type: 3}
   gameplayClip: {fileID: 8300000, guid: e67ec1a1df373bd4db5ebbe833e4a08e, type: 3}
   hoverClip: {fileID: 8300000, guid: ae3a5bc0a94062b468b5620d78b83202, type: 3}
+  purchaseClip: {fileID: 8300000, guid: 644ff010fd312944a96b22a359ff71e7, type: 3}
+  bedClip: {fileID: 8300000, guid: 0b16ade64c129f2438197237cc28aa38, type: 3}
   clickClip: {fileID: 8300000, guid: b747e5cdcdfa7a848b31a17a3e3d351a, type: 3}
   musicSource: {fileID: 877156854}
   sfxSource: {fileID: 2113074655}

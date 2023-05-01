@@ -68,6 +68,7 @@ public class ItemManager : MonoBehaviour
     {
         if(!GameManager.instance.RemoveMoney(cost))
             return;
+        AudioManager.instance.PlayPurchaseSfx();
         if (!_ownedItems.Contains(item))
         {
             for (var i = 0; i < availableItems.Count; i++)
@@ -111,6 +112,7 @@ public class ItemManager : MonoBehaviour
 
     public void OnBedClicked()
     {
+        AudioManager.instance.PlayBedSfx();
         var transactionsToRemove = new List<GameObject>();
         foreach (var transaction in _uiTransactions)
         {

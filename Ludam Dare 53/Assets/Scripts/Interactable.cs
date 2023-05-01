@@ -23,6 +23,7 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerEnter(PointerEventData eventData)
     {
         hovering = true;
+        AudioManager.instance.PlayHoverSfx();
         _image.sprite = highlightedSprite;
     }
 
@@ -37,6 +38,7 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             _image.sprite = pressedSprite;
+            AudioManager.instance.PlayClickSfx();
         }
     }
 

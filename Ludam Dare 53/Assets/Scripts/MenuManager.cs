@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,21 +8,19 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private float transitionDuration;
     [SerializeField] private Image fadeImage;
 
-    public void PlayGame()
+    private void Awake()
     {
-        fadeImage.gameObject.SetActive(true);
-        StartCoroutine(FadeTransition());
+        fadeImage.DOFade(0f, 0f);
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(fadeImage.gameObject);
     }
 
-    private IEnumerator FadeTransition()
+    public void PlayGame()
     {
-        for(int i = 0; i<100; i++)
+        fadeImage.DOFade(1f, transitionDuration).OnComplete(() =>
         {
-            var tempColor = fadeImage.color;
-            tempColor.a += 0.01f;
-            fadeImage.color = tempColor;
-            yield return new WaitForSeconds(transitionDuration);
-        }
-        SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
+            fadeImage.DOFade(0f, transitionDuration);
+        });
     }
 }

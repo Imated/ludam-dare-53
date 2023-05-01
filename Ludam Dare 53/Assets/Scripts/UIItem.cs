@@ -42,7 +42,7 @@ public class UIItem : MonoBehaviour
         referenceItem = item;
         _sellingPrice = price;
         _isTransaction = true;
-        _chanceOfBeingSold = Mathf.Pow(50, Mathf.Pow(item.cost / price, 1 / (item.cost / price))) / 100;
+        _chanceOfBeingSold = Mathf.Clamp01(Mathf.Pow((item.cost / price), 0.6f) * 0.7f);
         print(price);
         print(_chanceOfBeingSold * 100 + "%");
     }

@@ -3592,8 +3592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -200.00012, y: -101}
-  m_SizeDelta: {x: 860, y: 126}
+  m_AnchoredPosition: {x: -252.79999, y: -95.69998}
+  m_SizeDelta: {x: 751.46, y: 131.3}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &625615532
 MonoBehaviour:
@@ -3754,6 +3754,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 978925690}
+        m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
+        m_MethodName: MarketClicked
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4843,6 +4855,7 @@ GameObject:
   - component: {fileID: 978925687}
   - component: {fileID: 978925689}
   - component: {fileID: 978925688}
+  - component: {fileID: 978925690}
   m_Layer: 5
   m_Name: Computer
   m_TagString: Untagged
@@ -4895,7 +4908,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d6e263d1621f2cd42b7ae237a4e7fc55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db6b53c0f4c5472459ed9d1097bcc5c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4913,6 +4926,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978925686}
   m_CullTransparentMesh: 1
+--- !u!114 &978925690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978925686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde43fd1b90d59b4b8a638a8190cc3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MarketSelected: {fileID: 21300000, guid: db6b53c0f4c5472459ed9d1097bcc5c7, type: 3}
+  OwnedSelected: {fileID: 21300000, guid: 54dcdde0768f6ce43a89ee3070169828, type: 3}
 --- !u!1 &1033478926
 GameObject:
   m_ObjectHideFlags: 0
@@ -8210,8 +8237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25, y: -101}
-  m_SizeDelta: {x: 860, y: 126}
+  m_AnchoredPosition: {x: 96.22003, y: -95.70001}
+  m_SizeDelta: {x: 762.3, y: 131.3}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2043644169
 MonoBehaviour:
@@ -8370,6 +8397,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 978925690}
+        m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
+        m_MethodName: OwnedClicked
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

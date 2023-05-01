@@ -32,16 +32,18 @@ public class EndDayUI : MonoBehaviour
             moneyMadeText.text = $"MONEY MADE: <color=#276221>$ {GameManager.instance.Money - _lastMoney}</color>";
 
         foodAndShippingCost = (GameManager.instance.ItemsSold - _lastItemsSold) * 0.5f + 1;
-        GameManager.instance.RemoveMoney(foodAndShippingCost);
+        GameManager.instance.AddMoney(-foodAndShippingCost);
         foodAndShippingText.text = $"FOOD AND SHIPPING: <color=#C30010>$ {-foodAndShippingCost}</color>";
         _lastMoney = GameManager.instance.Money;
         itemsSoldText.text = $"ITEMS SOLD: {GameManager.instance.ItemsSold - _lastItemsSold}";
         _lastItemsSold = GameManager.instance.ItemsSold;
-        endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(0f, animationDuration).SetEase(Ease.OutExpo);
+        if (GameManager.instance.Money >= 0)
+            endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(0f, animationDuration).SetEase(Ease.OutExpo);
     }
 
     public void NextDay()
     {
-        endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(_endDayUIOriginalY, animationDuration - 0.5f).SetEase(Ease.InExpo);
+        if(GameManager.instance.Money >= 0)
+            endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(_endDayUIOriginalY, animationDuration - 0.5f).SetEase(Ease.InExpo);
     }
 }

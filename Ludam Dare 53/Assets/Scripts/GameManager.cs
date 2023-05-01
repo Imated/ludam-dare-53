@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text moneyText;
     [SerializeField] private TMP_Text dayText;
     [SerializeField] private int startingMoney = 100;
+    [SerializeField] private GameObject LossUI;
     
     private float _money;
     public float Money => _money;
@@ -38,6 +39,10 @@ public class GameManager : MonoBehaviour
     public bool AddMoney(float amount)
     {
         _money += amount;
+        if(_money < 0)
+        {
+            LossUI.SetActive(true);
+        }
         UpdateUI();
         return true;
     }

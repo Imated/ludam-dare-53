@@ -26,11 +26,11 @@ public class EndDayUI : MonoBehaviour
         _lastMoney = GameManager.instance.Money;
         itemsSoldText.text = $"ITEMS SOLD: {GameManager.instance.ItemsSold - _lastItemsSold}";
         _lastItemsSold = GameManager.instance.ItemsSold;
-        endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(0f, animationDuration).SetEase(Ease.OutBounce);
+        endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(0f, animationDuration).SetEase(Ease.OutExpo);
     }
 
     public void NextDay()
     {
-        endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(_endDayUIOriginalY, animationDuration - 0.5f).SetEase(Ease.InBack);
+        endDayUI.transform.GetComponent<RectTransform>().DOAnchorPosY(_endDayUIOriginalY, animationDuration - 0.5f).SetEase(Ease.InExpo);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ItemManager : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private List<GameObject> roomItems;
     [SerializeField] private GameObject availableItemParent;
     [SerializeField] private GameObject sellUI;
+    [SerializeField] private GameObject editUI;
     [SerializeField] private TMP_InputField sellUIPriceField;
+    [SerializeField] private TMP_InputField editUIPriceField;
     [SerializeField] private GameObject ownedItemParent;
     [SerializeField] private GameObject shippingItemsParent;
     [SerializeField] private GameObject shippingItemPrefab;
@@ -96,6 +99,12 @@ public class ItemManager : MonoBehaviour
         float.TryParse(sellUIPriceField.text, out var sellingPrice);
         uiItem.GetComponent<UIItem>().InitializeTransaction(item, sellingPrice);
         _uiTransactions.Add(uiItem);
+        uiItem.GetComponentInChildren<Button>().onClick.AddListener(() =>
+        {
+            _currentlySelectedItem = item;
+            _currentlySelectedUIItem = uiItem;
+            editUI.SetActive(true);
+        });
         _currentlySelectedItem = null;
         _currentlySelectedUIItem = null;
     }
@@ -123,5 +132,16 @@ public class ItemManager : MonoBehaviour
 
         foreach (var transaction in transactionsToRemove)
             _uiTransactions.Remove(transaction);
+    }
+
+    public void EditItemPrice()
+    {
+        var item = _currentlySelectedItem;
+        var uiItem = _currentlySelectedUIItem;
+        float.TryParse(editUIPriceField.text, out var sellingPrice);
+        uiItem.GetComponent<UIItem>().ChangePrice(item, sellingPrice);
+        _currentlySelectedItem = null;
+        _currentlySelectedUIItem = null;
+        editUI.SetActive(false);
     }
 }

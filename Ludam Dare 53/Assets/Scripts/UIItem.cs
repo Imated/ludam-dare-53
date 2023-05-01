@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class UIItem : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UIItem : MonoBehaviour
     [SerializeField] private TMP_Text itemNameText;
     [SerializeField] private TMP_Text costText;
     [SerializeField] private Button buyButton;
+    [SerializeField] private GameObject editUI;
 
     private bool _isTransaction;
     private float _chanceOfBeingSold;
@@ -62,12 +64,19 @@ public class UIItem : MonoBehaviour
 
     public void OnBuy()
     {
-        if(GameManager.instance.Money >  referenceItem.cost)
+        if(GameManager.instance.Money >  referenceItem.cost && buyButton.GetComponentInChildren<TMP_Text>().text == "BUY")
         {
             buyButton.GetComponentInChildren<TMP_Text>().text = "SOLD";
             buyButton.image.color = Color.gray;
             buyButton.interactable = false;
             buyButton.GetComponent<Interactable>().enabled = false;
         }
+    }
+
+    public void ChangePrice(Item item, float price)
+    {
+        costText.text = $"$ {price:F2}";
+        _sellingPrice = price;
+        _chanceOfBeingSold = Mathf.Pow(50, Mathf.Pow(item.cost / price, 1 / (item.cost / price))) / 100;
     }
 }

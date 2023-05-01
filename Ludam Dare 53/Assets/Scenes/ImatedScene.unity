@@ -5285,7 +5285,7 @@ MonoBehaviour:
   endDayUI: {fileID: 1358007035}
   moneyMadeText: {fileID: 693083786}
   itemsSoldText: {fileID: 2119198001}
-  foodAndShippingText: {fileID: 0}
+  foodAndShippingText: {fileID: 611842971}
   animationDuration: 1.25
 --- !u!1 &1405200894
 GameObject:

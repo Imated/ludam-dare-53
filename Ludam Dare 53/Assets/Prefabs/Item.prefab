@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 165f9f855142fb543a6e06ece01bedc3, type: 3}
   highlightedSprite: {fileID: 21300000, guid: e02b81e628f21d4488286a3cbb199f0c, type: 3}
+  pressedSprite: {fileID: 21300000, guid: b47dea5b438c2e1438d3c387a450fb5b, type: 3}
   onClicked:
     m_PersistentCalls:
       m_Calls: []

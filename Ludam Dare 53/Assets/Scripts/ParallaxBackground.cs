@@ -4,7 +4,7 @@ namespace LunarJam
 {
     public class ParallaxBackground : MonoBehaviour
     {
-        [SerializeField] private float parallaxSpeed = 1f;
+        [SerializeField] private float parallaxSpeed = 0.5f;
         [SerializeField] private float resetYPosition  = -20f;
 
         private Vector3 _originalPosition;

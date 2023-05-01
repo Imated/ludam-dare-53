@@ -410,7 +410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: 185}
+  m_AnchoredPosition: {x: -45, y: 185}
   m_SizeDelta: {x: 186.31299, y: 56.725}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &6247943066410394258
@@ -545,8 +545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 247.8717, y: 185}
-  m_SizeDelta: {x: 292.9422, y: 50}
+  m_AnchoredPosition: {x: 228.60933, y: 185}
+  m_SizeDelta: {x: 254.4286, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6247943067182027003
 CanvasRenderer:
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: name
+  m_text: pluto's revolution poster
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eeb91226d947c5c40b8a1346e7105f1d, type: 2}
   m_sharedMaterial: {fileID: 6357870574574489623, guid: eeb91226d947c5c40b8a1346e7105f1d, type: 2}
@@ -603,11 +603,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.95
+  m_fontSize: 26.25
   m_fontSizeBase: 68
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 32
+  m_fontSizeMin: 26
   m_fontSizeMax: 68
   m_fontStyle: 16
   m_HorizontalAlignment: 1

@@ -18,7 +18,6 @@ public class RoomTransition : MonoBehaviour
 
     public void RoomFadeOut()
     {
-        StopAllCoroutines();
         rectTransform.transform.localPosition = gameObject.transform.localPosition;
         rectTransform.DOAnchorPosY(yPositionDown, transitionTimeDown).SetEase(Ease.OutQuint).OnComplete(() => rectTransform.DOAnchorPosY(yPositionUp, transitionTimeUp).SetEase(Ease.InOutQuad));
     }

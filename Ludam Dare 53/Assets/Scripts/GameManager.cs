@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public float Money => _money;
     private int _day;
     public int Day => _day;
+    private int _itemsSold;
+    public int ItemsSold => _itemsSold;
 
     private void Awake()
     {
@@ -26,6 +28,11 @@ public class GameManager : MonoBehaviour
     {
         _day++;
         UpdateUI();
+    }
+    
+    public void IncreaseItemsSold()
+    {
+        _itemsSold++;
     }
 
     public bool AddMoney(float amount)

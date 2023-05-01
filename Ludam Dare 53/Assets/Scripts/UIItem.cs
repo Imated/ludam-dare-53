@@ -51,6 +51,7 @@ public class UIItem : MonoBehaviour
         if (Random.value < _chanceOfBeingSold)
         {
             GameManager.instance.AddMoney(_sellingPrice);
+            GameManager.instance.IncreaseItemsSold();
             Destroy(gameObject);
             return true;
         }

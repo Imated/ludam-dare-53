@@ -237,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 225.00002}
+  m_AnchoredPosition: {x: 0, y: 225}
   m_SizeDelta: {x: 360, y: 80}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &44632072
@@ -254,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 165f9f855142fb543a6e06ece01bedc3, type: 3}
   highlightedSprite: {fileID: 21300000, guid: e02b81e628f21d4488286a3cbb199f0c, type: 3}
+  pressedSprite: {fileID: 21300000, guid: b47dea5b438c2e1438d3c387a450fb5b, type: 3}
   onClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -1183,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 165f9f855142fb543a6e06ece01bedc3, type: 3}
   highlightedSprite: {fileID: 21300000, guid: e02b81e628f21d4488286a3cbb199f0c, type: 3}
+  pressedSprite: {fileID: 21300000, guid: b47dea5b438c2e1438d3c387a450fb5b, type: 3}
   onClicked:
     m_PersistentCalls:
       m_Calls: []
@@ -2323,6 +2325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 377e0bb0adb10b54a8fffe08ff1dc6ab, type: 3}
   highlightedSprite: {fileID: 21300000, guid: ea27f3ebe0b08dd4986476ff8a869538, type: 3}
+  pressedSprite: {fileID: 21300000, guid: ea27f3ebe0b08dd4986476ff8a869538, type: 3}
   onClicked:
     m_PersistentCalls:
       m_Calls:
@@ -4108,6 +4111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 662e5c679909e8444ad1a334e60a6c4a, type: 3}
   highlightedSprite: {fileID: 21300000, guid: b3a3373edaae59940bbdd1cbf14fc21a, type: 3}
+  pressedSprite: {fileID: 21300000, guid: b3a3373edaae59940bbdd1cbf14fc21a, type: 3}
   onClicked:
     m_PersistentCalls:
       m_Calls:
@@ -4158,7 +4162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -836.9999, y: 1079.9999}
+  m_AnchoredPosition: {x: -836.99994, y: 1079.9999}
   m_SizeDelta: {x: -0.000061035156, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080016015
@@ -5334,7 +5338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalSprite: {fileID: 21300000, guid: 84ca2e29d7652e74c9d670b78396c9a2, type: 3}
-  highlightedSprite: {fileID: 21300000, guid: d781821fd6d7af64cbfae62e2a29cf64, type: 3}
+  highlightedSprite: {fileID: 21300000, guid: 84ca2e29d7652e74c9d670b78396c9a2, type: 3}
+  pressedSprite: {fileID: 21300000, guid: d781821fd6d7af64cbfae62e2a29cf64, type: 3}
   onClicked:
     m_PersistentCalls:
       m_Calls:

@@ -62,9 +62,12 @@ public class UIItem : MonoBehaviour
 
     public void OnBuy()
     {
-        buyButton.GetComponentInChildren<TMP_Text>().text = "SOLD";
-        buyButton.image.color = Color.gray;
-        buyButton.interactable = false;
-        buyButton.GetComponent<Interactable>().enabled = false;
+        if(GameManager.instance.Money >  referenceItem.cost)
+        {
+            buyButton.GetComponentInChildren<TMP_Text>().text = "SOLD";
+            buyButton.image.color = Color.gray;
+            buyButton.interactable = false;
+            buyButton.GetComponent<Interactable>().enabled = false;
+        }
     }
 }

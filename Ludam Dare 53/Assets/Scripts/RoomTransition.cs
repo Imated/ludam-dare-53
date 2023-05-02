@@ -5,20 +5,24 @@ using DG.Tweening;
 
 public class RoomTransition : MonoBehaviour
 {
+    [SerializeField] private bool bounceOnAwake;
     [SerializeField] private float transitionTimeUp;
     [SerializeField] private float transitionTimeDown;
     [SerializeField] private float yPositionUp;
     [SerializeField] private float yPositionDown;
-    private RectTransform rectTransform;
+    
+    private RectTransform _rectTransform;
 
-    private void Start()
+    private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
+        _rectTransform = GetComponent<RectTransform>();
+        if(bounceOnAwake)
+            RoomFadeOut();
     }
 
     public void RoomFadeOut()
     {
-        rectTransform.transform.localPosition = gameObject.transform.localPosition;
-        rectTransform.DOAnchorPosY(yPositionDown, transitionTimeDown).SetEase(Ease.OutQuint).OnComplete(() => rectTransform.DOAnchorPosY(yPositionUp, transitionTimeUp).SetEase(Ease.InOutQuad));
+        _rectTransform.transform.localPosition = gameObject.transform.localPosition;
+        _rectTransform.DOAnchorPosY(yPositionDown, transitionTimeDown).SetEase(Ease.OutQuint).OnComplete(() => _rectTransform.DOAnchorPosY(yPositionUp, transitionTimeUp).SetEase(Ease.InOutQuad));
     }
 }

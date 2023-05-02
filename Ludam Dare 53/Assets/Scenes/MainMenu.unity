@@ -4397,6 +4397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25348093b310a584bb069a0fc87a10ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bounceOnAwake: 0
   transitionTimeUp: 0.9
   transitionTimeDown: 0.2
   yPositionUp: 2000

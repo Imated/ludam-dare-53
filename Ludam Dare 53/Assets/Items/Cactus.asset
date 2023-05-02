@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cactus
   icon: {fileID: 21300000, guid: cd9d61393422a474bb7796a824ddc81e, type: 3}
-  cost: 20
+  cost: 15

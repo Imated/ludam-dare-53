@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Fish Tank
   icon: {fileID: 21300000, guid: 24851899c3e129042987a79e49dc6da1, type: 3}
-  cost: 35.75
+  cost: 70

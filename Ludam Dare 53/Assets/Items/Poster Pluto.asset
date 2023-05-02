@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pluto's Revolution Poster
   icon: {fileID: 21300000, guid: 5ec1d349e60173845a5dd99bf802d8b0, type: 3}
-  cost: 15.5
+  cost: 15

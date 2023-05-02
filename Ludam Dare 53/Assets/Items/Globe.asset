@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Globe
   icon: {fileID: 21300000, guid: 6ea994961c26fce47817c16f2270b4b0, type: 3}
-  cost: 12.5
+  cost: 10

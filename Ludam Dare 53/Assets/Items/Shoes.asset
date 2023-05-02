@@ -14,6 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Nike Air Jordan Originals
   icon: {fileID: 21300000, guid: a688e403797722b4d96e42063f19d94f, type: 3}
-  roomItem: {fileID: 21300000, guid: 3f4e0887969ac6f4188b62c2430c0a38, type: 3}
-  cost: 500
-  zOrder: 1
+  cost: 250

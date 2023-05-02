@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stack of Books
   icon: {fileID: 21300000, guid: 01d87d9deeabf40409f43f7aa00085b4, type: 3}
-  cost: 27.5
+  cost: 30

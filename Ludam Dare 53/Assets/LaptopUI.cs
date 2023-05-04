@@ -1,35 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LaptopUI : MonoBehaviour
 {
-    [SerializeField] private Sprite MarketSelected;
-    [SerializeField] private Sprite OwnedSelected;
+    [SerializeField] private Sprite marketSelected;
+    [SerializeField] private Sprite marketHighlighted;
+    [SerializeField] private Sprite ownedSelected;
+    [SerializeField] private Sprite ownedHighlighted;
     [SerializeField] private GameObject marketContainer;
     [SerializeField] private GameObject ownedItemsContainer;
-    private Image image;
+    
+    private Image _image;
 
     private void Start()
     {
-        image = GetComponent<Image>();
+        _image = GetComponent<Image>();
     }
 
     public void MarketClicked()
     {
-        image.sprite = MarketSelected;
+        _image.sprite = marketSelected;
     }
 
     public void OwnedClicked()
     {
-        image.sprite = OwnedSelected;
+        _image.sprite = ownedSelected;
     }
 
+    public void MarketHovered()
+    {
+        _image.sprite = marketHighlighted;
+    }
+
+    public void OwnedHovered()
+    {
+        _image.sprite = ownedHighlighted;
+    }
+    
+    public void MarketStoppedHovering()
+    {
+        _image.sprite = ownedSelected;
+    }
+
+    public void OwnedStoppedHovering()
+    {
+        _image.sprite = marketSelected;
+    }
+    
     public void OnBedClicked()
     {
-        OwnedClicked();
+        MarketClicked();
         marketContainer.SetActive(true);
         ownedItemsContainer.SetActive(false);
     }

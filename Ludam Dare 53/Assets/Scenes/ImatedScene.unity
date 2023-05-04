@@ -123,6 +123,101 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &26744163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26744164}
+  - component: {fileID: 26744166}
+  - component: {fileID: 26744165}
+  - component: {fileID: 26744167}
+  m_Layer: 5
+  m_Name: BG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &26744164
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26744163}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 625615531}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1.6400146, y: 0.000030517578}
+  m_SizeDelta: {x: 3.2800293, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &26744165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26744163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 24d3d1eefd7d9474abf8184bdf01ec16, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.1
+--- !u!222 &26744166
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26744163}
+  m_CullTransparentMesh: 1
+--- !u!114 &26744167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26744163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bf41881fed33f49ab9ae49b930c091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 21300000, guid: 24d3d1eefd7d9474abf8184bdf01ec16, type: 3}
+  highlightedSprite: {fileID: 21300000, guid: e7399f56cf28a4c489718ac0d61d28c0, type: 3}
+  pressedSprite: {fileID: 21300000, guid: 05093b117cbf2934c90e1517745668d1, type: 3}
+  onClicked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &36004490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,14 +5073,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 26744164}
   m_Father: {fileID: 978925687}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96.22009, y: -95.70007}
-  m_SizeDelta: {x: 751.45996, y: 131.3}
+  m_AnchoredPosition: {x: 80.96997, y: -80.72998}
+  m_SizeDelta: {x: 776.73, y: 152.78}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &625615532
 MonoBehaviour:
@@ -5156,7 +5252,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 978925690}
         m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
-        m_MethodName: OwnedClicked
+        m_MethodName: MarketClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7075,7 +7171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 54dcdde0768f6ce43a89ee3070169828, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d6e263d1621f2cd42b7ae237a4e7fc55, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7105,8 +7201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde43fd1b90d59b4b8a638a8190cc3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MarketSelected: {fileID: 21300000, guid: db6b53c0f4c5472459ed9d1097bcc5c7, type: 3}
-  OwnedSelected: {fileID: 21300000, guid: 54dcdde0768f6ce43a89ee3070169828, type: 3}
+  marketSelected: {fileID: 21300000, guid: 54dcdde0768f6ce43a89ee3070169828, type: 3}
+  marketHighlighted: {fileID: 21300000, guid: 943ea51444d3fa64384a7361a7f32e34, type: 3}
+  ownedSelected: {fileID: 21300000, guid: db6b53c0f4c5472459ed9d1097bcc5c7, type: 3}
+  ownedHighlighted: {fileID: 21300000, guid: 63b8106d4640af74395591c5f40d7e6e, type: 3}
   marketContainer: {fileID: 1894466882}
   ownedItemsContainer: {fileID: 439472112}
 --- !u!1 &995919801
@@ -12900,7 +12998,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 978925690}
         m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
-        m_MethodName: MarketClicked
+        m_MethodName: OwnedClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -23,6 +23,7 @@ public class ItemManager : MonoBehaviour
     private List<Item> _ownedItems = new List<Item>();
     private List<Item> _shippingItems = new List<Item>();
     private List<GameObject> _uiTransactions = new List<GameObject>();
+    private Dictionary<Item, string> _lastItemValues = new Dictionary<Item, string>();
     private Item _currentlySelectedItem;
     private GameObject _currentlySelectedUIItem;
 
@@ -85,7 +86,17 @@ public class ItemManager : MonoBehaviour
             _currentlySelectedItem = item;
             _currentlySelectedUIItem = uiItem;
             sellUI.SetActive(true);
-            sellUI.GetComponentInChildren<TMP_InputField>().Select();
+            var inputField = sellUI.GetComponentInChildren<TMP_InputField>();
+            inputField.Select();
+            inputField.onValueChanged.AddListener((newValue) =>
+            {
+                if (_lastItemValues.ContainsKey(_currentlySelectedItem))
+                    _lastItemValues[_currentlySelectedItem] = newValue;
+                else
+                    _lastItemValues.Add(_currentlySelectedItem, newValue);
+            });
+            _lastItemValues.TryGetValue(_currentlySelectedItem, out var value);
+            inputField.text = value;
         });
     }
 
@@ -105,7 +116,17 @@ public class ItemManager : MonoBehaviour
             _currentlySelectedItem = item;
             _currentlySelectedUIItem = uiItem;
             editUI.SetActive(true);
-            editUI.GetComponentInChildren<TMP_InputField>().Select();
+            var inputField = editUI.GetComponentInChildren<TMP_InputField>();
+            inputField.Select();
+            inputField.onValueChanged.AddListener((newValue) =>
+            {
+                if (_lastItemValues.ContainsKey(_currentlySelectedItem))
+                    _lastItemValues[_currentlySelectedItem] = newValue;
+                else
+                    _lastItemValues.Add(_currentlySelectedItem, newValue);
+            });
+            _lastItemValues.TryGetValue(_currentlySelectedItem, out var value);
+            inputField.text = value;
         });
         _currentlySelectedItem = null;
         _currentlySelectedUIItem = null;

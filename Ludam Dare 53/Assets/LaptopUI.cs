@@ -8,6 +8,8 @@ public class LaptopUI : MonoBehaviour
 {
     [SerializeField] private Sprite MarketSelected;
     [SerializeField] private Sprite OwnedSelected;
+    [SerializeField] private GameObject marketContainer;
+    [SerializeField] private GameObject ownedItemsContainer;
     private Image image;
 
     private void Start()
@@ -23,5 +25,12 @@ public class LaptopUI : MonoBehaviour
     public void OwnedClicked()
     {
         image.sprite = OwnedSelected;
+    }
+
+    public void OnBedClicked()
+    {
+        OwnedClicked();
+        marketContainer.SetActive(true);
+        ownedItemsContainer.SetActive(false);
     }
 }

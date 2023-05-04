@@ -4333,6 +4333,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 978925690}
+        m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
+        m_MethodName: OnBedClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &564232698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,11 +4982,11 @@ RectTransform:
   m_Father: {fileID: 978925687}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -252.79993, y: -95.69995}
-  m_SizeDelta: {x: 751.46, y: 131.3}
-  m_Pivot: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 96.22009, y: -95.70007}
+  m_SizeDelta: {x: 751.45996, y: 131.3}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &625615532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5144,7 +5156,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 978925690}
         m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
-        m_MethodName: MarketClicked
+        m_MethodName: OwnedClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7063,7 +7075,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: db6b53c0f4c5472459ed9d1097bcc5c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54dcdde0768f6ce43a89ee3070169828, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7095,6 +7107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MarketSelected: {fileID: 21300000, guid: db6b53c0f4c5472459ed9d1097bcc5c7, type: 3}
   OwnedSelected: {fileID: 21300000, guid: 54dcdde0768f6ce43a89ee3070169828, type: 3}
+  marketContainer: {fileID: 1894466882}
+  ownedItemsContainer: {fileID: 439472112}
 --- !u!1 &995919801
 GameObject:
   m_ObjectHideFlags: 0
@@ -12714,11 +12728,11 @@ RectTransform:
   m_Father: {fileID: 978925687}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96.22009, y: -95.70001}
-  m_SizeDelta: {x: 762.3, y: 131.3}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -250, y: -95.70001}
+  m_SizeDelta: {x: 762.30005, y: 131.3}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &2043644169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12886,7 +12900,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 978925690}
         m_TargetAssemblyTypeName: LaptopUI, Assembly-CSharp
-        m_MethodName: OwnedClicked
+        m_MethodName: MarketClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

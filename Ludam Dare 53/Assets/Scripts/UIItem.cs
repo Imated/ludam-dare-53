@@ -76,6 +76,6 @@ public class UIItem : MonoBehaviour
     {
         costText.text = $"$ {price:F2}";
         _sellingPrice = price;
-        _chanceOfBeingSold = Mathf.Pow(50, Mathf.Pow(item.cost / price, 1 / (item.cost / price))) / 100;
+        _chanceOfBeingSold = Mathf.Pow(82, item.cost / price) / 100;
     }
 }

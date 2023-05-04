@@ -85,6 +85,7 @@ public class ItemManager : MonoBehaviour
             _currentlySelectedItem = item;
             _currentlySelectedUIItem = uiItem;
             sellUI.SetActive(true);
+            sellUI.GetComponentInChildren<TMP_InputField>().Select();
         });
     }
 
@@ -104,6 +105,7 @@ public class ItemManager : MonoBehaviour
             _currentlySelectedItem = item;
             _currentlySelectedUIItem = uiItem;
             editUI.SetActive(true);
+            editUI.GetComponentInChildren<TMP_InputField>().Select();
         });
         _currentlySelectedItem = null;
         _currentlySelectedUIItem = null;
